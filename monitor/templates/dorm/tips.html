@@ -14,7 +14,8 @@
   {% bootstrap_javascript %}
   {% bootstrap_messages %}
 
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+  <nav class="navbar navbar-inverse navbar-sticky-top" role="navigation">
     <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" toggle="collapse" target=".navbar-collapse">
@@ -26,6 +27,7 @@
       <a class="navbar-brand" href="/"><b>Turn Down For Watt</b></a>
     </div>
 
+
     <ul class="nav navbar-nav navbar-right navbar-collapse">
       <li><a href="{% url 'dorms:list' %}"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> Dorms</a></li>
       <li><a href="/tips"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i> Tips</a></li>
@@ -33,6 +35,24 @@
     </ul>
     <div>
   </nav>
+
+        <center>
+          <div id="Tips" class="tabcontent">
+            <h3><font size="7">ELECTRICITY TIPS<h3>
+        <ul>
+            <li>Turn off all lights, appliances and electronics not in use.
+            <li>Unplug the Power Strip.
+            <li>Unplug Large Appliances.
+            <li>Turn your air conditioner off.
+        </ul>
+                <h3><font size="7">WATER TIPS<h3>
+                    <ul>
+            <li>Wash clothes in cold water.
+            <li>Shorter Showers.
+                        <li>Bring re-usable water bottles.
+                        <li>Pre-rinse dishes.
+        </ul>
+        </div>
 
   {% block content %}
   {% endblock content %}

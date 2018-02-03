@@ -3,18 +3,24 @@
 {% block content %}
 <link href="" type="text/css" rel="stylesheet" />
 <div class="container">
+  <div class="page-header">
+  <center> <h1>Current Energy Scores</h1>
+     <small>The following energy scores represent the percent reduction in energy usage per floor, normalized by the number of residents and additional rooms within that floor. These values are updated daily.</small></center>
+</div>
   <div class="row">
-    <div class="col-lg-8">
-      <div class="panel panel-primary">
+
+
+    <div class="col-lg-4">
+      <div class="panel panel-warning">
         <div class="panel-heading">
-          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i> Energy Consumption</big></b>
+          <b><big>Tips</big></b>
         </div>
-        <div class="panel-body">
-          <div id="overallgraph" style="height: 400px"></div>
+        <div class="list-group panel-body">
+          <div class="alert alert-success">
+            <a href="#" class="alert-link">Here's a tip!</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-4">
       <div class="panel panel-success">
         <div class="panel-heading">
           <b><big><i class="fa fa-trophy fa-2x fa-fw" aria-hidden="true"></i> Rankings</big></b>
@@ -28,16 +34,39 @@
           {% endfor %}
         </div>
       </div>
-      <div class="panel panel-warning">
+    </div>
+    <div class="col-lg-8">
+      <div class="panel panel-primary">
+
         <div class="panel-heading">
-          <b><big>Tips</big></b>
+          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i> Energy Consumption</big></b>
         </div>
-        <div class="list-group panel-body">
-          <div class="alert alert-success">
-            <a href="#" class="alert-link">Here's a tip!</a>
+        <div class="panel-body">
+
+          <div id="overallgraph" style="height: 400px">
+            <h2>Montag 1</h2>
+            <div class = "progress">
+          <div class = "progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+            60%
+          </div>
+        </div>
+            <h2>Montag 2</h2>
+            <div class = "progress">
+          <div class = "progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
+            33%
+          </div>
+        </div>
+            <h2>Montag 3</h2>
+            <div class = "progress">
+          <div class = "progress-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width: 91%;">
+            91%
+          </div>
+        </div>
           </div>
         </div>
       </div>
+      <h4>Weekly Energy Consumption</h4>
+      <img src="{{STATIC_URL}}images/pie_chart.png" />
     </div>
   </div>
 </div>
