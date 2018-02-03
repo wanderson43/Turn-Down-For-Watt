@@ -2,6 +2,7 @@ from django.http      import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views     import generic
 from .models          import Dorm, Tip, About, EnergyReading
+from .forms           import ContactForm
 
 def index(request):
     all_dorms = Dorm.objects.all()
@@ -18,7 +19,10 @@ def tips(request):
 def about(request):
     model = About
     template_name = 'dorm/about.html'
-    return render(request, 'dorm/about.html')
+    contact_form = ContactForm
+    return render(request, 'dorm/about.html', {
+        'form': contact_form,
+        })
 
 class DormListView(generic.ListView):
     model = Dorm
