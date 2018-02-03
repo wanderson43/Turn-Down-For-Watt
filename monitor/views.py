@@ -1,7 +1,7 @@
 from django.http      import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views     import generic
-from .models          import Dorm, EnergyReading
+from .models          import Dorm, Tip, About, EnergyReading
 
 def index(request):
     all_dorms = Dorm.objects.all()
@@ -10,6 +10,16 @@ def index(request):
     }
     return render(request, 'dorm/index.html', context)
 
+def tips(request):
+    model = Tip
+    template_name = 'dorm/tips.html'
+    return render(request, 'dorm/tips.html')
+
+def about(request):
+    model = About
+    template_name = 'dorm/about.html'
+    return render(request, 'dorm/about.html')
+
 class DormListView(generic.ListView):
     model = Dorm
     template_name = 'dorm/list.html'
@@ -17,6 +27,8 @@ class DormListView(generic.ListView):
 class DormDetailView(generic.DetailView):
     model = Dorm
     template_name = 'dorm/detail.html'
+
+
 
 def add_reading(request, pk):
     print(request.body)

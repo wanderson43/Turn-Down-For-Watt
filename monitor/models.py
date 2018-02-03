@@ -10,6 +10,24 @@ class Dorm(models.Model):
     def __str__(self):
         return str(self.name)
 
+class Tip(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=400)
+    num_rooms = models.IntegerField(default=0)
+    energy_score = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.name)
+
+class About(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=400)
+    num_rooms = models.IntegerField(default=0)
+    energy_score = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.name)
+
 class EnergyReading(models.Model):
     dorm = models.ForeignKey(Dorm, on_delete=models.SET_NULL, null=True)
     power = models.FloatField(default=0)
