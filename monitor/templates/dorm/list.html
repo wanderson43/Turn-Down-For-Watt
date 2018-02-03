@@ -1,0 +1,15 @@
+{% extends "dorm/base.html" %}
+
+{% block content %}
+{% if dorm_list %}
+<div class="container">
+  <ul class="list-unstyled">
+    {% for dorm in dorm_list %}
+    <li><a href="{% url 'dorms:detail' dorm.id %}">{{ dorm.name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No dorms data available</p>
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,43 @@
+{% extends "dorm/base.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i> Energy Consumption</big></b>
+        </div>
+        <div class="panel-body">
+          <div id="overallgraph" style="height: 400px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <b><big><i class="fa fa-trophy fa-2x fa-fw" aria-hidden="true"></i> Rankings</big></b>
+        </div>
+        <div class="list-group panel-body">
+          {% for dorm in dorm_list %}
+          <a href="{% url 'dorms:detail' dorm.id %}" class="list-group-item list-group-item-action">
+            <span>{{ dorm.name }}</span>
+            <small><em class="pull-right">{{ dorm.director }}</em></small>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <b><big>Tips</big></b>
+        </div>
+        <div class="list-group panel-body">
+          <div class="alert alert-success">
+            <a href="#" class="alert-link">Here's a tip!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
