@@ -61,6 +61,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'energyjackets.wsgi.application'
 
+#INSTALLED_APPS = ['django.contrib.staticfiles']
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -110,3 +111,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = "/static/"
+
+# typically, os.path.join(os.path.dirname(__file__), 'media')
+MEDIA_ROOT = '<your_path>/media'
+MEDIA_URL = '/media/'

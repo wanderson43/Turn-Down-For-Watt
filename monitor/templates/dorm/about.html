@@ -13,12 +13,14 @@
 	<div class="col-md-6">
 		<img src="./resources/building">
 		<p>
-			<b>Leave us feedback and/or questions!</b>
+			<b>{{ message }}</b>
 		</p>
 		<form action="" method="post">
     		{{ form.content }}
     		<div class="col-md-7 text-right">
+				{% if show %}
 				<button type="submit">Submit</button>
+				{% endif %}
     		</div>
 		</form>
 	</div>
