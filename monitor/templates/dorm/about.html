@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
+
 <div class="container">
 	<div class="col-lg-6">
 		<div class="col-lg-1">
@@ -18,16 +20,16 @@
 	</div>
 	<div class="col-lg-6">
 		<div class="col-lg-12">
-			<img src="{% static 'images/building.jpeg' %}"/>
+			<img src="{% static 'images/building.jpeg' %}" class="image2"/>
 		</div>
-		<div class="col-lg-12">
+		<div class="col-lg-12" id="feedback">
 			<p>
 				<b>Leave us feedback and/or questions!</b>
 			</p>
 			<form action="" method="post">
 	    		{{ form.content }}
 	    		<div class="col-md-7 text-right">
-					<button type="submit">Submit</button>
+					<button type="submit" id="submit">Submit</button>
 	    		</div>
 			</form>
 		</div>
