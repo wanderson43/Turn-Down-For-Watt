@@ -1,15 +1,66 @@
 {% extends "dorm/base.html" %}
 
 {% block content %}
-{% if dorm_list %}
+<link href="" type="text/css" rel="stylesheet" />
 <div class="container">
-  <ul class="list-unstyled">
-    {% for dorm in dorm_list %}
-    <li><a href="{% url 'dorms:detail' dorm.id %}">{{ dorm.name }}</a></li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>No dorms data available</p>
+  <div class="page-header">
+  <center> <h1>Dashboard</h1>
+     <small>Welcome!</small></center>
 </div>
-{% endif %}
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <b><big>Team Participants</big></b>
+        </div>
+        <div class="list-group panel-body">
+          <div class="alert alert-success">
+            {% if dorm_list %}
+              <div class="container">
+                <ul class="list-unstyled">
+                {% for dorm in dorm_list %}
+                  <li><a href="{% url 'dorms:detail' dorm.id %}">{{ dorm.name }}</a></li>
+                {% endfor %}
+                </ul>
+            {% else %}
+            <p>No dorms data available</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <b><big><i class="fa fa-trophy fa-2x fa-fw" aria-hidden="true"></i> Rankings</big></b>
+        </div>
+        <div class="list-group panel-body">
+          {% for dorm in dorm_list %}
+          <a href="{% url 'dorms:detail' dorm.id %}" class="list-group-item list-group-item-action">
+            <span>{{ dorm.name }}</span>
+            <small><em class="pull-right">{{ dorm.director }}</em></small>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="panel panel-primary">
+
+        <div class="panel-heading">
+          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i><center>{{ date }}</center></big></b>
+        </div>
+        <div class="panel-body">
+          <center><p>Check your real-time data!</p></center>
+          <center><p> [GRAPH HERE] </p></center>
+          <center><p>Reading from your Pi ######.</p></center>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% endblock content %}
