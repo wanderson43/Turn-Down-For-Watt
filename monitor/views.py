@@ -44,17 +44,24 @@ def graph(request):
     template_name = 'dorm/tips.html'
     return render(request, 'dorm/graph.html')
 
-class DormListView(generic.ListView):
+def DormListView(request):
     model = Dorm
     template_name = 'dorm/list.html'
+    time = datetime.datetime.now()
+    all_dorms = Dorm.objects.all()
+    context = {
+        'dorm_list': all_dorms,'date': time
+    }
+    return render(request, 'dorm/list.html', context)
 
-def DormDetailView(request):
+class DormDetailView(generic.DetailView):
     model = Dorm
     template_name = 'dorm/detail.html'
-    context = {
-        'dorm_list': all_dorms,
-    }
-    return render(request, 'dorm/detail.html')
+    # all_dorms = Dorm.objects.all()
+    # context = {
+    #     'dorm_list': all_dorms,
+    # }
+    # return render(request, 'dorm/detail.html')
 
 
 def add_reading(request, pk):
