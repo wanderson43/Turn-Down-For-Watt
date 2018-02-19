@@ -1,0 +1,37 @@
+{% extends "dorm/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+	<div class="col-lg-6">
+		<div class="col-lg-1">
+			<img src="{% static 'images/energy.jpg' %}"/>
+		</div>	
+		<div class="col-lg-12">	
+			<h3> ABOUT THE ENERGY CLUB </h3>
+			<p>
+				The Energy Club seeks to inspire and prepare the next generation of individuals knowledgeable in the complex interaction energy-related world. We strive to bring together the technology, policy and business of the energy landscape to better understand the issues and contribute to the dialogue. We offer a great opportunity to get involved and network with many influential energy leaders on campus and across the country. The interdisciplinary nature of the topic ensures that there is something for everyone in the club. We cater to all majors and both graduate and undergraduate students. Learn more about us at www.energyclub.gatech.edu.
+			</p>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="col-lg-12">
+			<img src="{% static 'images/building.jpeg' %}"/>
+		</div>
+		<div class="col-lg-12">
+			<p>
+				<b>Leave us feedback and/or questions!</b>
+			</p>
+			<form action="" method="post">
+	    		{{ form.content }}
+	    		<div class="col-md-7 text-right">
+					<button type="submit">Submit</button>
+	    		</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
