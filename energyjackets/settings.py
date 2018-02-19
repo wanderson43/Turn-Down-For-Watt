@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import os.path
+=======
+import os
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -93,12 +97,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+<<<<<<< HEAD
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     os.path.join('../static'),
     '../energyjackets/../static/',
 ]
 
+=======
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -120,4 +127,8 @@ STATIC_ROOT = "/static/"
 
 # typically, os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_ROOT = '<your_path>/media'
+<<<<<<< HEAD
 MEDIA_URL = '/media/'
+=======
+MEDIA_URL = '/media/'
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69

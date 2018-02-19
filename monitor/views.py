@@ -7,9 +7,14 @@ import datetime
 
 def index(request):
     all_dorms = Dorm.objects.all()
+<<<<<<< HEAD
     time = datetime.datetime.now()
     context = {
         'dorm_list': all_dorms, 'date': time
+=======
+    context = {
+        'dorm_list': all_dorms,
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
     }
     return render(request, 'dorm/index.html', context)
 
@@ -35,7 +40,10 @@ def about(request):
         })
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
 def comparison(request):
     model = Tip
     template_name = 'dorm/tips.html'
@@ -46,6 +54,7 @@ def graph(request):
     template_name = 'dorm/tips.html'
     return render(request, 'dorm/graph.html')
 
+<<<<<<< HEAD
 
 
 def DormListView(request):
@@ -55,13 +64,30 @@ def DormListView(request):
     time = datetime.datetime.now()
     context = {
         'dorm_list': all_dorms, 'date': time
+=======
+def DormListView(request):
+    model = Dorm
+    template_name = 'dorm/list.html'
+    time = datetime.datetime.now()
+    all_dorms = Dorm.objects.all()
+    context = {
+        'dorm_list': all_dorms,'date': time
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
     }
     return render(request, 'dorm/list.html', context)
 
 class DormDetailView(generic.DetailView):
     model = Dorm
     template_name = 'dorm/detail.html'
+<<<<<<< HEAD
 
+=======
+    # all_dorms = Dorm.objects.all()
+    # context = {
+    #     'dorm_list': all_dorms,
+    # }
+    # return render(request, 'dorm/detail.html')
+>>>>>>> 37d2117fc3659bd162b96d44e155944582164e69
 
 
 def add_reading(request, pk):
