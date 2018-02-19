@@ -38,74 +38,25 @@
 
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i> Energy Consumption</big></b>
-        </div>
-        <div class="panel-body">
-          <div id="overallgraph" style="height: 400px"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <b><big><i class="fa fa-trophy fa-2x fa-fw" aria-hidden="true"></i> Rankings</big></b>
-        </div>
-        <div class="list-group panel-body">
-          {% for dorm in dorm_list %}
-          <a href="{% url 'dorms:detail' dorm.id %}" class="list-group-item list-group-item-action">
-            <span>{{ dorm.name }}</span>
-            <small><em class="pull-right">{{ dorm.director }}</em></small>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      <div class="panel panel-warning">
-        <div class="panel-heading">
-          <b><big>Tips</big></b>
-        </div>
-        <div class="list-group panel-body">
-          <div class="alert alert-success">
-            <a href="#" class="alert-link">Here's a tip!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="container">
+
+	<div class="col-md-3">
+        {% load static %}
+        <p><img src="{% static "images/plug.png" %}"  alt="plug" align="left"  style="width:200px;height:200px;"/></p>
+        <p><img src="{% static "images/water.png" %}" alt="water" align="left" style="width:200px;height:200px;"/></p>
+	</div>
 
 
 
-  {% load static %}
-  <img src="{% static "images/plug.png" %}"  alt="plug"   style="width:280px;height:280px;"/>
-  <img src="{% static "images/water.png" %}" alt="water"  style="width:304px;height:304px;"/>
+	<div class="col-md-6">
 
-
- <div style="width:100%;"> <!-- Main Div -->
-Header
-
-<div style="float:left; width:20%;">
-Left  <!-- Set Div As your requirement -->
-</div>
-
-<div style="float:right; width:80%; margin-left:10px;">
-Right  <!-- Set Div As your requirement -->
-</div>
-
-</div>
-
-
-  <div style="text-align: center;">
+		  <div style="text-align: center;">
 
     <div style="display: inline-block; text-align: left;">
 
         <div style="display: inline-block; text-align: center;"> </div>
 
-            <h3><font size="7"><style="text-align:center">ELECTRICITY TIPS<h3>
+            <h3><font size="7"><style="text-align:center">ELECTRICITY TIPS</style></h3>
 
         <ul>
         <font size="4">
@@ -116,21 +67,20 @@ Right  <!-- Set Div As your requirement -->
         </ul>
 
 
-          <h3><font size="7">WATER TIPS<h3>
-                                      <ul>
+          <h3><font size="7">WATER TIPS</h3>
+        <ul>
         <font size="4">
             <li>Wash clothes in cold water.
             <li>Shorter Showers.
             <li>Bring re-usable water bottles.
             <li>Pre-rinse dishes.
         </ul>
-     </div>
+
+    </div>
+          </div>
+    </div>
 
   </div>
 
-
-
-  {% block content %}
-  {% endblock content %}
 </body>
 </html>
