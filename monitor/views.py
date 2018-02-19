@@ -7,8 +7,9 @@ import datetime
 
 def index(request):
     all_dorms = Dorm.objects.all()
+    time = datetime.datetime.now()
     context = {
-        'dorm_list': all_dorms,
+        'dorm_list': all_dorms, 'date': time
     }
     return render(request, 'dorm/index.html', context)
 
@@ -47,9 +48,15 @@ def graph(request):
 
 
 
-class DormListView(generic.ListView):
+def DormListView(request):
     model = Dorm
     template_name = 'dorm/list.html'
+    all_dorms = Dorm.objects.all()
+    time = datetime.datetime.now()
+    context = {
+        'dorm_list': all_dorms, 'date': time
+    }
+    return render(request, 'dorm/list.html', context)
 
 class DormDetailView(generic.DetailView):
     model = Dorm

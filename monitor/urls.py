@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'^comparison/$', views.about, name='about'),
     url(r'^graph/$', views.about, name='about'),
-    url(r'^dorms/$', views.DormListView.as_view(), name='list'),
+    url(r'^dorms/$', views.DormListView, name='list'),
     url(r'^dorms/(?P<pk>[0-9]+)/$', views.DormDetailView.as_view(), name='detail'),
     url(r'^dorms/(?P<pk>[0-9]+)/addenergyreading$', views.add_reading),
 ]
