@@ -1,0 +1,13 @@
+name,floor,usage,device,id
+Montag,1,3500,Rasberry Pi,1
+Montag,2,1234,Arduino,2
+Montag,3,9735,Rasberry Pi,3
+Freeman,1,9999,Arduino,4
+Freeman,2,1927,Rasberry Pi,5
+Freeman,3,1000,Arduino,6
+Folk,1,12345,Rasberry Pi,7
+Folk,2,18073,Arduino,8
+Folk,3,11239,Rasberry Pi,9
+Towers,1,12000,Arduino,10
+Towers,2,19999,Rasberry Pi,11
+Towers,3,2006,Arduino,12

@@ -7,6 +7,10 @@
     {% for energy_usage in dorm.energyreading_set.all %}
     <li>{{ energy_usage.power }}W at {{ energy_usage.timestamp }}</li>
     {% endfor %}
+    	<div class="col-md-3">
+        {% load static %}
+        <p><img src="{% static "images/energygraphs.jpeg" %}"  alt="plug" align="left"  style="width:200px;height:200px;"/></p>
+	</div>
   </ul>
 </div>
 {% endblock content %}
