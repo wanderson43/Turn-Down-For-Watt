@@ -12,8 +12,7 @@ Download Django
 
 ## Local Hosting
 
-cd into the main directories.
-Then run python manage.py runserver
+python manage.py runserver
 
 
 ## Built With
