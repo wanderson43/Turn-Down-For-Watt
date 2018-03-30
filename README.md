@@ -1,6 +1,6 @@
-# Project Title
+# Turn Down For Watt
 
-Turn Down For Watt
+The Turn Down For Watt is web application used for tracking the energy consumption of freshman residence halls.
 
 ### Prerequisites
 
