@@ -12,7 +12,9 @@ Download Django
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+cd into the main directories 
+Then run python manage.py runserver
+
 
 ## Built With
 
