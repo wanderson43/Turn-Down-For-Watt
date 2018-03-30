@@ -1,9 +1,11 @@
 from django.http      import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import get_object_or_404, render
 from django.views     import generic
-from .models          import Dorm, Tip, About, EnergyReading, Comparison, Graph
-from ContactForm     import ContactForm
+from django.db        import transaction
+from .models          import Dorm, Tip, About, EnergyReading, Comparison, Graph, Forms
+from ContactForm      import ContactForm
 import datetime
+import time
 
 def index(request):
     all_dorms = Dorm.objects.all()
@@ -23,9 +25,12 @@ def about(request):
     model = About
     template_name = 'dorm/about.html'
     if request.method == 'POST':
-        print ContactForm
         form = ContactForm(request.POST)
-        print form.data['content']
+        message = form.data['content']
+        date_time = time.strftime("%Y-%m-%d %H:%M")
+        theForm = Forms(date_time=date_time, message=message)
+        theForm.save()
+        transaction.commit()
         message = "Your submission was received. Thank you!"
         return render(request, 'dorm/about.html', {'data': form.data['content'], 'message': message})
     else:

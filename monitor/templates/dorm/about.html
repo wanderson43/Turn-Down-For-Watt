@@ -24,7 +24,7 @@
 		</div>
 		<div class="col-lg-12" id="feedback">
 			<p>
-				<b>Leave us feedback and/or questions!</b>
+				<b id="feedback_message"">Leave us feedback and/or questions!</b>
 			</p>
 			<form action="" method="post">
 	    		{{ form.content }}
@@ -35,5 +35,20 @@
 		</div>
 	</div>
 </div>
+
+{% if message == "Your submission was received. Thank you!" %}
+    <script type="text/javascript">
+		function feedbackHandler() {
+		    var submit = document.getElementById("submit");
+		    if (submit.style.display === "none") {
+		        submit.style.display = "block";
+		    } else {
+		        submit.style.display = "none";
+		    }
+		    document.getElementById("feedback_message").innerHTML = "{{message}}"
+		}
+		window.onLoad = feedbackHandler()
+	</script>
+{% endif %}
 
 {% endblock content %}
