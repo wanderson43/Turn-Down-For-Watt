@@ -10,9 +10,9 @@ What things you need to install the software and how to install them
 Download Django
 ```
 
-## Deployment
+## Local Hosting
 
-cd into the main directories 
+cd into the main directories.
 Then run python manage.py runserver
 
 
