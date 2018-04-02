@@ -42,17 +42,8 @@
           <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i> Energy Consumption</big></b>
         </div>
         <div class="panel-body">
-
-          <div id="overallgraph" style="height: 400px">
-            {% for dorm in dorm_list %}
-            <h2>{{ dorm }}</h2>
-            <div class = "progress">
-          <div class = "progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            60%
-          </div>
-        </div>
-            {% endfor %}
-          </div>
+          {% load static %}
+          <p><img src="{% static "images/3graphs.png" %}"  alt="plug" align="center"  style="width:700px;height:500px;"/></p>
         </div>
       </div>
       <h4>Weekly Energy Consumption</h4>
