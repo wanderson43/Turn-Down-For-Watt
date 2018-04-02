@@ -2,11 +2,25 @@
 
 {% block content %}
 <div class="container">
-  <h1>{{ dorm.name }}</h1>
-  <ul>
-    {% for energy_usage in dorm.energyreading_set.all %}
-    <li>{{ energy_usage.power }}W at {{ energy_usage.timestamp }}</li>
-    {% endfor %}
-  </ul>
+  <center> <h1>{{ dorm.name }}</h1> </center>
+  <!--<ul>-->
+    <!--{% for energy_usage in dorm.energyreading_set.all %}-->
+    <!--<li>{{ energy_usage.power }}W at {{ energy_usage.timestamp }}</li>-->
+    <!--{% endfor %}-->
+  <!--</ul>-->
+  <div class="panel panel-primary">
+
+        <div class="panel-heading">
+          <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i><center>Energy Dashboard</center></big></b>
+        </div>
+        <div class="panel-body">
+          <center><p>Check your real-time data!</p></center>
+          <center><p> [GRAPH HERE] </p></center>
+          <center><p>Reading from your Pi ######.</p></center>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 {% endblock content %}
