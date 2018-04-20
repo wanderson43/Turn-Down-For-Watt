@@ -51,15 +51,18 @@
           <b><big><i class="fa fa-line-chart fa-2x fa-fw" aria-hidden="true"></i><center>{{ date }}</center></big></b>
         </div>
         <div class="panel-body">
-          {% load static %}
+          <body>
           <script src="http://d3js.org/d3.v3.min.js"></script>
+          {% load static %}
+          <svg width="680" height="400"></svg>
           <script>
 
           // Set the dimensions of the canvas / graph
           var margin = {top: 30, right: 20, bottom: 30, left: 50},
-              width = 600 - margin.left - margin.right,
-              height = 270 - margin.top - margin.bottom;
-
+              //width = +svg.attr("width") - margin.left - margin.right,
+              //height = +svg.attr("height") - margin.top - margin.bottom;
+              width = 680 - margin.left - margin.right,
+              height = 400 - margin.top - margin.bottom;
           // Parse the date / time
           var parseDate = d3.time.format("%d-%b-%y").parse;
 
@@ -80,10 +83,11 @@
               .y(function(d) { return y(d.close); });
               
           // Adds the svg canvas
-          var svg = d3.select("body")
+          var svg = d3.select("svg")
+              /*
               .append("svg")
                   .attr("width", width + margin.left + margin.right)
-                  .attr("height", height + margin.top + margin.bottom)
+                  .attr("height", height + margin.top + margin.bottom) */
               .append("g")
                   .attr("transform", 
                         "translate(" + margin.left + "," + margin.top + ")");
@@ -102,6 +106,8 @@
               // Add the valueline path.
               svg.append("path")
                   .attr("class", "line")
+                  .attr("stroke", "black")
+                  .attr("fill", "none")
                   .attr("d", valueline(data));
 
               // Add the X Axis
@@ -118,7 +124,7 @@
           });
 
           </script>
-          <!--><p><img src="{% static "images/2nd3graph.png" %}"  alt="plug" align="center"  style="width:700px;height:500px;"/></p> <-->
+        </body>>
         </div>
           </div>
         </div>
