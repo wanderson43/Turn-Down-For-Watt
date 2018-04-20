@@ -15,7 +15,7 @@ SECRET_KEY = 'notsecret'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-        'energy-jackets.herokuapp.com', '127.0.0.1'
+        'energy-jackets.herokuapp.com', '127.0.0.1', 'localhost'
         ]
 
 
