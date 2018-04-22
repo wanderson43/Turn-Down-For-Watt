@@ -7,33 +7,39 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
 
 <div class="container">
-	<div class="col-lg-6">
-		<div class="col-lg-1">
+	<div class="page-header">
+  <center> <h1><b>About Energy Club</b></h1></center>
+</div>
+	<div class="row" >
+	<div class="col-lg-6" style="padding-right: 40px;">
+		<div class="row">
 			<img src="{% static 'images/energy.jpg' %}"/>
 		</div>	
-		<div class="col-lg-12">	
+		<div class="row" style="padding-right: 30px;">
 			<h3> ABOUT THE ENERGY CLUB </h3>
 			<p>
 				The Energy Club seeks to inspire and prepare the next generation of individuals knowledgeable in the complex interaction energy-related world. We strive to bring together the technology, policy and business of the energy landscape to better understand the issues and contribute to the dialogue. We offer a great opportunity to get involved and network with many influential energy leaders on campus and across the country. The interdisciplinary nature of the topic ensures that there is something for everyone in the club. We cater to all majors and both graduate and undergraduate students. Learn more about us at www.energyclub.gatech.edu.
 			</p>
 		</div>
-	</div>
-	<div class="col-lg-6">
-		<div class="col-lg-12">
-			<img src="{% static 'images/building.jpeg' %}" class="image2"/>
-		</div>
-		<div class="col-lg-12" id="feedback">
+		<div class="row" style="padding-top: 5%; padding-left: 50px;">
+
+		<div id="feedback">
 			<p>
-				<b id="feedback_message"">Leave us feedback and/or questions!</b>
+				<b id="feedback_message" >Leave us feedback and/or questions!</b>
 			</p>
 			<form action="" method="post">
-	    		{{ form.content }}
-	    		<div class="col-md-7 text-right">
+	    		{{ form.content }}<br>
 					<button type="submit" id="submit">Submit</button>
-	    		</div>
 			</form>
 		</div>
 	</div>
+	</div>
+	<div class="col-lg-6">
+			<img src="{% static 'images/building.jpeg' %}" class="image2" alt="Georgia Institute of Technology" style="width:592px;height:334px;"/>
+
+		</div>
+		</div>
+
 </div>
 
 {% if message == "Your submission was received. Thank you!" %}
