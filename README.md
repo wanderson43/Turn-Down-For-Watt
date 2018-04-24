@@ -33,14 +33,14 @@ python manage.py runserver
 * We love anyone who uses this web app
 
 ## Release Notes version Turn Down For Watt v1.0
-* NEW FEATURES
+* NEW FEATURES *
 	Added form submissions to about page
 	Added ability to view graphs and energy data
 	Added sqlite3 database
-* BUG FIXES
+* BUG FIXES *
 	Navigation between different web pages
 	Form submission now properly submits to database without crashing page
-* KNOWN BUGS
+* KNOWN BUGS *
 	D3 graphs fails to render under certain circumstances (yet to figure out when)
 	Individual dorm floors don’t dynamically display graphs
 
